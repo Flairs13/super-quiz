@@ -44,7 +44,7 @@ export default createGlobalStyle`
 
   body {
     line-height: 1;
-    background: linear-gradient(66deg, #e38010, #1535bf);
+    //background: linear-gradient(66deg, #e38010, #1535bf);
   }
   
 
