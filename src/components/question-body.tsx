@@ -38,4 +38,5 @@ const QuestionTitle = styled.h1`
 `
 const QuestionCounter = styled.small`
   display: flex;
+  min-width: 50px;
 `

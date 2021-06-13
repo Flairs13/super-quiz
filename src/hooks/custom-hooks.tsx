@@ -45,8 +45,8 @@ export const useCustomSelector = (selector: (state: any) => any, funcEqual = isE
     }, []);
 
     useEffect(() => {
-        store.subscribe(checkForUpdates);
-        return () => {store.unSubscribe(checkForUpdates)}
+       const unsub = store.subscribe(checkForUpdates);
+        return () => {unsub(checkForUpdates)}
     }, []);
 
     return selectedStateRef.current;

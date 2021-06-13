@@ -5,18 +5,21 @@ type reducerT = (initialState: InitialStateType ,action: actionT) => InitialStat
 const createCustomStore = (reducer: reducerT, initialState?: object | InitialStateType) => {
     let currentState: InitialStateType | {} = initialState ? initialState : reducer(undefined as any,{type: 'initialization'})
 
-    const listeners = new Map()
+    const listeners = new Set()
 
     const getState = () => currentState
     const dispatch = (action: actionT) => {
         const newState = reducer(currentState as InitialStateType,action)
         currentState = newState
-        listeners.forEach((listener: (state: object) => void) => listener(newState))
+        listeners.forEach((listener: any) => listener(newState))
     }
-    const subscribe = (listener: (state: AppStateType) => void) => listeners.set(listener,listener)
-    const unSubscribe = (listener: (state: AppStateType) => void) => listeners.delete(listener)
+    const subscribe = (listener: (state: AppStateType) => void) => {
+        listeners.add(listener)
+        return (listener: (state: AppStateType) => void) => listeners.delete(listener)
+    }
 
-    return {getState,dispatch,subscribe,unSubscribe}
+
+    return {getState,dispatch,subscribe}
 
 }
 
