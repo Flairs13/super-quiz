@@ -40,6 +40,3 @@ const AnswersWrapper = styled.ul`
   font-size: 1.3rem;
   margin-top: 50px;
 `
-const List = styled(animated.div)`
-   
-`

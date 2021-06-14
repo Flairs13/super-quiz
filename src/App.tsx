@@ -13,22 +13,29 @@ function App() {
 
 
     const content = () => {
-        return arrQuestion.length + 1 === numberQuestion ? <Result arrQuestionsLength={arrQuestion.length}/> : <QuestionBody arrQuestion={arrQuestion} numberQuestion={numberQuestion}/>
+        return arrQuestion.length + 1 === numberQuestion ?
+            <Result arrQuestionsLength={arrQuestion.length}/> :
+            <QuestionBody arrQuestion={arrQuestion} numberQuestion={numberQuestion}/>
     }
 
     return (
-        <>
+        <QuizWrapper>
             <Title>Тестирование</Title>
             <CommonWrapper>
                 {content()}
             </CommonWrapper>
-        </>
+        </QuizWrapper>
 
     );
 };
 
 
 export default App;
+
+
+const QuizWrapper = styled.main`
+  padding: 10px;
+`
 
 const Title = styled.h1`
   text-align: center;

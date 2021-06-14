@@ -35,6 +35,17 @@ export default createGlobalStyle`
   :focus {
     outline: 0;
   }
+  :root {
+      @media (max-width: 570px){
+      font-size: 13px;
+    }
+     @media (max-width: 470px){
+      font-size: 10px;
+    }
+     @media (max-width: 370px){
+      font-size: 8px;
+    }
+  }
 
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
@@ -45,6 +56,7 @@ export default createGlobalStyle`
   body {
     line-height: 1;
     background: linear-gradient(66deg, #e38010, #1535bf);
+ 
   }
   
 

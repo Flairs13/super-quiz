@@ -25,7 +25,7 @@ const QuestionBody:React.FC<questionBody> = ({numberQuestion,arrQuestion}) => {
 export default QuestionBody;
 
 const QuestionWrapper = styled.section`
-  
+    
 `
 const QuestionHeader = styled.header`
     display: flex;
@@ -39,4 +39,5 @@ const QuestionTitle = styled.h1`
 const QuestionCounter = styled.small`
   display: flex;
   min-width: 50px;
+  padding: 0 5px;
 `

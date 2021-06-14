@@ -17,15 +17,11 @@ type answerItem = {
 const AnswerItem: React.FC<answerItem> = React.memo(({correctAnswerIndex, value, index, counterClick, id, updateAnimation, styles}) => {
     const dispatch = useCustomDispatch()
 
-    console.log('Item render')
     const [answer, setAnswer] = useState<number | boolean>(0)
 
     const clickItem = (index: number) => {
         counterClick.current++
         if (counterClick.current > 1) return
-
-
-        updateAnimation((prev: any) => !prev)
 
 
         if (isCorrectAnswer(index, correctAnswerIndex)) {
@@ -34,6 +30,7 @@ const AnswerItem: React.FC<answerItem> = React.memo(({correctAnswerIndex, value,
         } else {
             setAnswer(false)
         }
+        updateAnimation((prev: any) => !prev)
         setTimeout(() => dispatch(nextQuestion()), 1500)
     }
 
