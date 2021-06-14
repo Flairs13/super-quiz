@@ -69,7 +69,11 @@ const Item = styled(animated.li)`
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
+     @media (max-width: 800px){
+      background: none;
+    }
   }
+ 
 `
 
 const ItemText = styled.p`
