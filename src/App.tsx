@@ -35,17 +35,17 @@ export default App;
 
 const QuizWrapper = styled.main`
   padding: 10px;
+  max-width: 800px;
+  margin: 50px auto;
 `
 
 const Title = styled.h1`
-  text-align: center;
-  margin-top: 100px;
   font-size: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
 `
 const CommonWrapper = styled.section`
-  margin: 50px auto;
-  max-width: 800px;
   border: 3px solid white;
   border-radius: 5px;
-  padding: 15px 25px;
+  padding: 10px 15px;
 `

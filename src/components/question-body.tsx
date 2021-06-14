@@ -15,7 +15,7 @@ const QuestionBody:React.FC<questionBody> = ({numberQuestion,arrQuestion}) => {
         <QuestionWrapper>
             <QuestionHeader>
                 <QuestionTitle>{currQuestion.question}</QuestionTitle>
-                <QuestionCounter>{numberQuestion} из {arrQuestion.length}</QuestionCounter>
+                <QuestionCounter><span>{numberQuestion}</span><span>из</span><span>{arrQuestion.length}</span></QuestionCounter>
             </QuestionHeader>
             <AnswersList  {...currQuestion}/>
         </QuestionWrapper>
@@ -38,6 +38,11 @@ const QuestionTitle = styled.h1`
 `
 const QuestionCounter = styled.small`
   display: flex;
-  min-width: 50px;
-  padding: 0 5px;
+  padding: 0 10px;
+  span {
+    margin-right: 5px;
+  }
+  span:last-child {
+    margin-right: 0;
+  }
 `
